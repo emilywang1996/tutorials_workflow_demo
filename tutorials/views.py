@@ -26,8 +26,9 @@ from rest_framework.decorators import api_view
 class index(APIView):
     renderer_classes = [TemplateHTMLRenderer]
     template_name = 'tutorials/index.html'
-
-    def get(self, request):
+    
+#We will make a small change in this file to introduce a bug.
+#    def get(self, request):
         queryset = Tutorial.objects.all()
         return Response({'tutorials': queryset})
 
